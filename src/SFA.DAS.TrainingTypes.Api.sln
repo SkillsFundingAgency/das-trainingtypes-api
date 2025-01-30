@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{666A3BC6-A31F-4D7C-94F0-B35B751246D4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SFA.DAS.TrainingTypes.Api", "SFA.DAS.TrainingTypes.Api\SFA.DAS.TrainingTypes.Api.csproj", "{EF7E24CD-F43B-426F-BD1E-10AB1516B2EF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SFA.DAS.TrainingTypes.Api.UnitTests", "SFA.DAS.TrainingTypes.Api.UnitTests\SFA.DAS.TrainingTypes.Api.UnitTests.csproj", "{C87178B5-A45F-4FF5-9AD0-ECB53B26A283}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SFA.DAS.TrainingTypes.Domain", "SFA.DAS.TrainingTypes.Domain\SFA.DAS.TrainingTypes.Domain.csproj", "{F8F47C11-B9DF-41B5-A9BA-E2F866F91893}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SFA.DAS.TrainingTypes.Application", "SFA.DAS.TrainingTypes.Application\SFA.DAS.TrainingTypes.Application.csproj", "{5F52FB86-531D-4360-8472-26573F8985A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SFA.DAS.TrainingTypes.Application.UnitTests", "SFA.DAS.TrainingTypes.Application.UnitTests\SFA.DAS.TrainingTypes.Application.UnitTests.csproj", "{BB47A5FB-4035-4780-9F78-6A7476196877}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SFA.DAS.TrainingTypes.Domain.UnitTests", "SFA.DAS.TrainingTypes.Domain.UnitTests\SFA.DAS.TrainingTypes.Domain.UnitTests.csproj", "{01057B78-2C55-4FF6-8E54-7662059F8F1C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EF7E24CD-F43B-426F-BD1E-10AB1516B2EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF7E24CD-F43B-426F-BD1E-10AB1516B2EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF7E24CD-F43B-426F-BD1E-10AB1516B2EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF7E24CD-F43B-426F-BD1E-10AB1516B2EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C87178B5-A45F-4FF5-9AD0-ECB53B26A283}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C87178B5-A45F-4FF5-9AD0-ECB53B26A283}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C87178B5-A45F-4FF5-9AD0-ECB53B26A283}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C87178B5-A45F-4FF5-9AD0-ECB53B26A283}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8F47C11-B9DF-41B5-A9BA-E2F866F91893}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8F47C11-B9DF-41B5-A9BA-E2F866F91893}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8F47C11-B9DF-41B5-A9BA-E2F866F91893}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8F47C11-B9DF-41B5-A9BA-E2F866F91893}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F52FB86-531D-4360-8472-26573F8985A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F52FB86-531D-4360-8472-26573F8985A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F52FB86-531D-4360-8472-26573F8985A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F52FB86-531D-4360-8472-26573F8985A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB47A5FB-4035-4780-9F78-6A7476196877}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB47A5FB-4035-4780-9F78-6A7476196877}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB47A5FB-4035-4780-9F78-6A7476196877}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB47A5FB-4035-4780-9F78-6A7476196877}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01057B78-2C55-4FF6-8E54-7662059F8F1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01057B78-2C55-4FF6-8E54-7662059F8F1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01057B78-2C55-4FF6-8E54-7662059F8F1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01057B78-2C55-4FF6-8E54-7662059F8F1C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C87178B5-A45F-4FF5-9AD0-ECB53B26A283} = {666A3BC6-A31F-4D7C-94F0-B35B751246D4}
+		{0D42E9A3-7CBB-4117-8299-6EF8EEF43896} = {666A3BC6-A31F-4D7C-94F0-B35B751246D4}
+		{BB47A5FB-4035-4780-9F78-6A7476196877} = {666A3BC6-A31F-4D7C-94F0-B35B751246D4}
+		{01057B78-2C55-4FF6-8E54-7662059F8F1C} = {666A3BC6-A31F-4D7C-94F0-B35B751246D4}
+	EndGlobalSection
+EndGlobal
