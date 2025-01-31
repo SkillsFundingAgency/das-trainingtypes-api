@@ -2,6 +2,6 @@
 
 public class RecognitionOfPriorLearningNotRequired : RecognitionOfPriorLearning
 {
-    public override bool IsRequired => true;
+    public override bool IsRequired => false;
     public override int? OffTheJobTrainingMinimumHours => null;
 }

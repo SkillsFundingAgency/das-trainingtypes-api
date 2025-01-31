@@ -2,30 +2,70 @@
 using System.Net;
 using MediatR;
 using SFA.DAS.TrainingTypes.Api.ApiResponses;
+using SFA.DAS.TrainingTypes.Application.Application.Queries.GetLearnerAge;
+using SFA.DAS.TrainingTypes.Application.Application.Queries.GetRecognitionOfPriorLearning;
+using SFA.DAS.TrainingTypes.Application.Application.Queries.GetTrainingDuration;
+using SFA.DAS.TrainingTypes.Domain.Features;
 
 namespace SFA.DAS.TrainingTypes.Api.Controllers
 {
     [ApiVersion("1.0")]
     [ApiController]
-    [Route("api/trainingtypes/{shortCode}/features/{featureType}")]
     public class FeaturesController(IMediator mediator, ILogger<FeaturesController> logger) : Controller
     {
         [HttpGet]
-        public async Task<IActionResult> GetFeature([FromRoute] string trainingTypeShortCode, [FromRoute] string featureType)
+        [Route("api/trainingtypes/{trainingTypeShortCode}/features/rpl")]
+        public async Task<IActionResult> GetRecognitionOfPriorLearning([FromRoute] string trainingTypeShortCode)
         {
             try
             {
-                var result = await mediator.Send(new GetApplicationWorkHistoriesQuery
+                var result = await mediator.Send(new GetRecognitionOfPriorLearningQuery
                 {
-                    CandidateId = candidateId,
-                    ApplicationId = applicationId,
-                    WorkHistoryType = workHistoryType
+                    TrainingTypeShortCode = trainingTypeShortCode
                 });
-                return Ok((GetFeatureApiResponse)result);
+                return Ok((GetRecognitionOfPriorLearningApiResponse)result);
             }
             catch (Exception e)
             {
-                logger.LogError(e, "GetFeature : An error occurred");
+                logger.LogError(e, "GetRecognitionOfPriorLearning : An error occurred");
+                return new StatusCodeResult((int)HttpStatusCode.InternalServerError);
+            }
+        }
+
+        [HttpGet]
+        [Route("api/trainingtypes/{trainingTypeShortCode}/features/learnerAge")]
+        public async Task<IActionResult> GetLearnerAge([FromRoute] string trainingTypeShortCode)
+        {
+            try
+            {
+                var result = await mediator.Send(new GetLearnerAgeQuery
+                {
+                    TrainingTypeShortCode = trainingTypeShortCode
+                });
+                return Ok((GetLearnerAgeApiResponse)result);
+            }
+            catch (Exception e)
+            {
+                logger.LogError(e, "GetLearnerAge : An error occurred");
+                return new StatusCodeResult((int)HttpStatusCode.InternalServerError);
+            }
+        }
+
+        [HttpGet]
+        [Route("api/trainingtypes/{trainingTypeShortCode}/features/trainingDuration")]
+        public async Task<IActionResult> GetTrainingDuration([FromRoute] string trainingTypeShortCode)
+        {
+            try
+            {
+                var result = await mediator.Send(new GetTrainingDurationQuery
+                {
+                    TrainingTypeShortCode = trainingTypeShortCode
+                });
+                return Ok((GetTrainingDurationApiResponse)result);
+            }
+            catch (Exception e)
+            {
+                logger.LogError(e, "GetTrainingDuration : An error occurred");
                 return new StatusCodeResult((int)HttpStatusCode.InternalServerError);
             }
         }
