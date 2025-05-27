@@ -20,7 +20,7 @@ builder.Services.AddSingleton(cfg => cfg.GetService<IOptions<TrainingTypeConfigu
 
 builder.Services.AddServiceRegistration();
 
-var candidateAccountConfiguration = rootConfiguration
+var configuration = rootConfiguration
     .GetSection(nameof(TrainingTypeConfiguration))
     .Get<TrainingTypeConfiguration>();
 
