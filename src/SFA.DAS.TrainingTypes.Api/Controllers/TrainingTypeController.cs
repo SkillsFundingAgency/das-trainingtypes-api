@@ -5,7 +5,6 @@ using SFA.DAS.TrainingTypes.Api.ApiResponses;
 using SFA.DAS.TrainingTypes.Application.Application.Queries.GetLearnerAge;
 using SFA.DAS.TrainingTypes.Application.Application.Queries.GetRecognitionOfPriorLearning;
 using SFA.DAS.TrainingTypes.Application.Application.Queries.GetTrainingDuration;
-using SFA.DAS.TrainingTypes.Domain.Features;
 
 namespace SFA.DAS.TrainingTypes.Api.Controllers
 {
