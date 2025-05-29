@@ -10,6 +10,19 @@
 *.userosscache
 *.sln.docstates
 
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+.history/
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+*.csproj.iml
+*.DotSettings
+*.DotSettings.user
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
