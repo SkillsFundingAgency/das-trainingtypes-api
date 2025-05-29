@@ -8,7 +8,7 @@ namespace SFA.DAS.TrainingTypes.Domain.Factories
 
         public TrainingType Get(string shortCode)
         {
-            return _trainingTypes.Single(x => x.ShortCode == shortCode);
+            return _trainingTypes.Single(x => string.Equals(x.ShortCode, shortCode, StringComparison.InvariantCultureIgnoreCase));
         }
     }
 }
