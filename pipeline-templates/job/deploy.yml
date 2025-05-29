@@ -39,17 +39,15 @@ jobs:
             TemplateSecrets:
               LoggingRedisConnectionString: $(LoggingRedisConnectionString)
               ConfigurationStorageConnectionString: $(ConfigurationStorageConnectionString)
-        # Commented out due to no config
-        # - template: azure-pipelines-templates/deploy/step/generate-config.yml@das-platform-building-blocks
-        #   parameters:
-        #     EnvironmentName: $(EnvironmentName)
-        #     ServiceConnection: ${{ parameters.ServiceConnection }}
-        #     SourcePath: $(Pipeline.Workspace)/das-employer-config/Configuration/das-trainingtypes-api
-        #     StorageAccountName: $(ConfigurationStorageAccountName)
-        #     StorageAccountResourceGroup: $(SharedEnvResourceGroup)
-        #     TargetFileName: '*.schema.json'
-        #     TableName: Configuration
-        #     ConfigurationSecrets: {} # remove this if there are no secrets that need to be mapped for config
+        - template: azure-pipelines-templates/deploy/step/generate-config.yml@das-platform-building-blocks
+          parameters:
+            EnvironmentName: $(EnvironmentName)
+            ServiceConnection: ${{ parameters.ServiceConnection }}
+            SourcePath: $(Pipeline.Workspace)/das-employer-config/Configuration/das-trainingtypes-api
+            StorageAccountName: $(ConfigurationStorageAccountName)
+            StorageAccountResourceGroup: $(SharedEnvResourceGroup)
+            TargetFileName: '*.schema.json'
+            TableName: Configuration
         - template: azure-pipelines-templates/deploy/step/app-deploy.yml@das-platform-building-blocks
           parameters:
             ServiceConnection: ${{ parameters.ServiceConnection }}
