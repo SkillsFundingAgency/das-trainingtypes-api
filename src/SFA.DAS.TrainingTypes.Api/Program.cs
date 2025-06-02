@@ -30,7 +30,7 @@ if (rootConfiguration["EnvironmentName"] != "DEV")
 
 }
 
-if (!(rootConfiguration["EnvironmentName"]!.Equals("TEST", StringComparison.CurrentCultureIgnoreCase) ||
+if (!(rootConfiguration["EnvironmentName"]!.Equals("LOCAL", StringComparison.CurrentCultureIgnoreCase) ||
       rootConfiguration["EnvironmentName"]!.Equals("DEV", StringComparison.CurrentCultureIgnoreCase)))
 {
     var azureAdConfiguration = rootConfiguration
