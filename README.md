@@ -4,9 +4,9 @@
 
 <img src="https://avatars.githubusercontent.com/u/9841374?s=200&v=4" align="right" alt="UK Government logo">
 
-[![Build Status](https://dev.azure.com/sfa-gov-uk/Digital%20Apprenticeship%20Service/_apis/build/status/das-coursetypes-api?branchName=master)](https://dev.azure.com/sfa-gov-uk/Digital%20Apprenticeship%20Service/_build/latest?definitionId=_projectid_&branchName=master)
+[![Build Status](https://dev.azure.com/sfa-gov-uk/Digital%20Apprenticeship%20Service/_apis/build/status%2Fdas-coursetypes-api?repoName=SkillsFundingAgency%2Fdas-coursetypes-api&branchName=refs%2Fpull%2F5%2Fmerge)](https://dev.azure.com/sfa-gov-uk/Digital%20Apprenticeship%20Service/_build/latest?definitionId=4017&repoName=SkillsFundingAgency%2Fdas-coursetypes-api&branchName=refs%2Fpull%2F5%2Fmerge)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=_projectId_&metric=alert_status)](https://sonarcloud.io/dashboard?id=_projectId_)
-[![Jira Project](https://img.shields.io/badge/Jira-Project-blue)](https://skillsfundingagency.atlassian.net/secure/RapidBoard.jspa?rapidView=564&projectKey=APPMAN)
+[![Jira Project](https://img.shields.io/badge/Jira-Project-blue)](https://skillsfundingagency.atlassian.net/jira/software/c/projects/APPMAN/boards/818)
 [![Confluence Project](https://img.shields.io/badge/Confluence-Project-blue)](https://skillsfundingagency.atlassian.net/wiki/spaces/_pageurl_)
 [![License](https://img.shields.io/badge/license-MIT-lightgrey.svg?longCache=true&style=flat-square)](https://en.wikipedia.org/wiki/MIT_License)
 
@@ -52,6 +52,23 @@ Add an appsettings.Development.json file:
     "EnvironmentName": "LOCAL",
     "Version": "1.0",
     "APPINSIGHTS_INSTRUMENTATIONKEY": ""
+}
+```
+
+Azure Table Storage config
+
+Row Key: SFA.DAS.CourseTypes.Api_1.0
+
+Partition Key: LOCAL
+
+Data:
+
+```json
+{
+  "AzureActiveDirectoryConfiguration": {
+    "tenant": "citizenazuresfabisgov.onmicrosoft.com",
+    "identifier": "https://citizenazuresfabisgov.onmicrosoft.com/das-at-ctapi-as-ar"
+  }
 }
 ```
 
