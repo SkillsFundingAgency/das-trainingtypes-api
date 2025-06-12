@@ -34,7 +34,7 @@ if (!(rootConfiguration["EnvironmentName"]!.Equals("LOCAL", StringComparison.Cur
       rootConfiguration["EnvironmentName"]!.Equals("DEV", StringComparison.CurrentCultureIgnoreCase)))
 {
     var azureAdConfiguration = rootConfiguration
-        .GetSection("AzureAd")
+        .GetSection(nameof(AzureActiveDirectoryConfiguration))
         .Get<AzureActiveDirectoryConfiguration>();
 
     var policies = new Dictionary<string, string>
