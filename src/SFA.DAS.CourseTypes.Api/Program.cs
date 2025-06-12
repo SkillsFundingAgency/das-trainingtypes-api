@@ -7,8 +7,8 @@ using SFA.DAS.Api.Common.AppStart;
 using SFA.DAS.Api.Common.Configuration;
 using SFA.DAS.Api.Common.Infrastructure;
 using SFA.DAS.CourseTypes.Api.AppStart;
-using SFA.DAS.CourseTypes.Domain.Configuration;
 using SFA.DAS.CourseTypes.Api.Infrastructure;
+using SFA.DAS.CourseTypes.Domain.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 

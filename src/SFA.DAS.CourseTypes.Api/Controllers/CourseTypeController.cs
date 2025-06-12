@@ -1,10 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System.Net;
+﻿using System.Net;
 using MediatR;
+using Microsoft.AspNetCore.Mvc;
 using SFA.DAS.CourseTypes.Api.ApiResponses;
+using SFA.DAS.CourseTypes.Application.Application.Queries.GetCourseDuration;
 using SFA.DAS.CourseTypes.Application.Application.Queries.GetLearnerAge;
 using SFA.DAS.CourseTypes.Application.Application.Queries.GetRecognitionOfPriorLearning;
-using SFA.DAS.CourseTypes.Application.Application.Queries.GetTrainingDuration;
 
 namespace SFA.DAS.CourseTypes.Api.Controllers
 {
@@ -51,20 +51,20 @@ namespace SFA.DAS.CourseTypes.Api.Controllers
         }
 
         [HttpGet]
-        [Route("api/coursetypes/{courseTypeShortCode}/features/trainingDuration")]
-        public async Task<IActionResult> GetTrainingDuration([FromRoute] string courseTypeShortCode)
+        [Route("api/coursetypes/{courseTypeShortCode}/features/courseDuration")]
+        public async Task<IActionResult> GetCourseDuration([FromRoute] string courseTypeShortCode)
         {
             try
             {
-                var result = await mediator.Send(new GetTrainingDurationQuery
+                var result = await mediator.Send(new GetCourseDurationQuery
                 {
                     CourseTypeShortCode = courseTypeShortCode
                 });
-                return Ok((GetTrainingDurationApiResponse)result);
+                return Ok((GetCourseDurationApiResponse)result);
             }
             catch (Exception e)
             {
-                logger.LogError(e, "GetTrainingDuration : An error occurred");
+                logger.LogError(e, "GetCourseDuration : An error occurred");
                 return new StatusCodeResult((int)HttpStatusCode.InternalServerError);
             }
         }

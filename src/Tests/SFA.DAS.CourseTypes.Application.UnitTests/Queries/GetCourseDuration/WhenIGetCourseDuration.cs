@@ -2,20 +2,20 @@ using AutoFixture.NUnit3;
 using FluentAssertions;
 using Moq;
 using NUnit.Framework;
-using SFA.DAS.CourseTypes.Application.Application.Queries.GetTrainingDuration;
+using SFA.DAS.CourseTypes.Application.Application.Queries.GetCourseDuration;
+using SFA.DAS.CourseTypes.Domain.CourseTypes;
 using SFA.DAS.CourseTypes.Domain.Factories;
 using SFA.DAS.Testing.AutoFixture;
-using SFA.DAS.CourseTypes.Domain.CourseTypes;
 
-namespace SFA.DAS.CourseTypes.Application.UnitTests.Queries.GetTrainingDuration;
+namespace SFA.DAS.CourseTypes.Application.UnitTests.Queries.GetCourseDuration;
 
 public class WhenIGetCourseTypeDuration
 {
     [Test, MoqAutoData]
     public async Task Then_The_CourseType_Duration_Is_Returned(
         [Frozen] Mock<ICourseTypeFactory> courseTypeFactory,
-        GetTrainingDurationQueryHandler handler,
-        GetTrainingDurationQuery query)
+        GetCourseDurationQueryHandler handler,
+        GetCourseDurationQuery query)
     {
         // Arrange
         var courseType = new Apprenticeship();
@@ -30,15 +30,15 @@ public class WhenIGetCourseTypeDuration
 
         // Assert
         result.Should().NotBeNull();
-        result.MinimumDurationMonths.Should().Be(courseType.TrainingDuration.MinimumDurationMonths);
-        result.MaximumDurationMonths.Should().Be(courseType.TrainingDuration.MaximumDurationMonths);
+        result.MinimumDurationMonths.Should().Be(courseType.CourseDuration.MinimumDurationMonths);
+        result.MaximumDurationMonths.Should().Be(courseType.CourseDuration.MaximumDurationMonths);
     }
 
     [Test, MoqAutoData]
     public async Task Then_If_An_Exception_Is_Thrown_Then_It_Is_Propagated(
         [Frozen] Mock<ICourseTypeFactory> courseTypeFactory,
-        GetTrainingDurationQueryHandler handler,
-        GetTrainingDurationQuery query,
+        GetCourseDurationQueryHandler handler,
+        GetCourseDurationQuery query,
         string courseTypeShortCode)
     {
         // Arrange

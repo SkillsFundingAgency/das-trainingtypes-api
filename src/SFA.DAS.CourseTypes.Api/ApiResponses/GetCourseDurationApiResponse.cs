@@ -1,15 +1,15 @@
-﻿using SFA.DAS.CourseTypes.Application.Application.Queries.GetTrainingDuration;
+﻿using SFA.DAS.CourseTypes.Application.Application.Queries.GetCourseDuration;
 
 namespace SFA.DAS.CourseTypes.Api.ApiResponses
 {
-    public class GetTrainingDurationApiResponse
+    public class GetCourseDurationApiResponse
     {
         public int MinimumDurationMonths { get; set; }
         public int MaximumDurationMonths { get; set; }
 
-        public static implicit operator GetTrainingDurationApiResponse(GetTrainingDurationResult source)
+        public static implicit operator GetCourseDurationApiResponse(GetCourseDurationResult source)
         {
-            return new GetTrainingDurationApiResponse
+            return new GetCourseDurationApiResponse
             {
                 MinimumDurationMonths = source.MinimumDurationMonths,
                 MaximumDurationMonths = source.MaximumDurationMonths

@@ -1,11 +1,11 @@
 using AutoFixture.NUnit3;
 using FluentAssertions;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using NUnit.Framework;
-using SFA.DAS.CourseTypes.Application.Application.Queries.GetTrainingDuration;
-using MediatR;
 using SFA.DAS.CourseTypes.Api.Controllers;
+using SFA.DAS.CourseTypes.Application.Application.Queries.GetCourseDuration;
 using SFA.DAS.Testing.AutoFixture;
 
 namespace SFA.DAS.CourseTypes.Api.UnitTests.Controllers.FeaturesControllerTests;
@@ -19,19 +19,19 @@ public class WhenIGetCourseTypeDuration
         string courseTypeShortCode)
     {
         // Arrange
-        var expectedResult = new GetTrainingDurationResult
+        var expectedResult = new GetCourseDurationResult
         {
             MinimumDurationMonths = 8,
             MaximumDurationMonths = 48
         };
         mediator
             .Setup(x => x.Send(
-                It.Is<GetTrainingDurationQuery>(q => q.CourseTypeShortCode == courseTypeShortCode), 
+                It.Is<GetCourseDurationQuery>(q => q.CourseTypeShortCode == courseTypeShortCode), 
                 It.IsAny<CancellationToken>()))
             .ReturnsAsync(expectedResult);
 
         // Act
-        var result = await controller.GetTrainingDuration(courseTypeShortCode);
+        var result = await controller.GetCourseDuration(courseTypeShortCode);
 
         // Assert
         result.Should().BeOfType<OkObjectResult>();
@@ -47,12 +47,12 @@ public class WhenIGetCourseTypeDuration
     {
         // Arrange
         mediator.Setup(x => x.Send(
-                It.Is<GetTrainingDurationQuery>(q => q.CourseTypeShortCode == courseTypeShortCode), 
+                It.Is<GetCourseDurationQuery>(q => q.CourseTypeShortCode == courseTypeShortCode), 
                 It.IsAny<CancellationToken>()))
             .ThrowsAsync(new Exception());
 
         // Act
-        var result = await controller.GetTrainingDuration(courseTypeShortCode);
+        var result = await controller.GetCourseDuration(courseTypeShortCode);
 
         // Assert
         result.Should().BeOfType<StatusCodeResult>();

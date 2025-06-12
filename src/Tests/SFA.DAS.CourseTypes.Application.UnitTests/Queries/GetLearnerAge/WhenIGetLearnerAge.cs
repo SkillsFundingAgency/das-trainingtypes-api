@@ -3,10 +3,10 @@ using FluentAssertions;
 using Moq;
 using NUnit.Framework;
 using SFA.DAS.CourseTypes.Application.Application.Queries.GetLearnerAge;
-using SFA.DAS.CourseTypes.Domain.Factories;
-using SFA.DAS.Testing.AutoFixture;
-using SFA.DAS.CourseTypes.Domain.Features;
 using SFA.DAS.CourseTypes.Domain.CourseTypes;
+using SFA.DAS.CourseTypes.Domain.Factories;
+using SFA.DAS.CourseTypes.Domain.Features;
+using SFA.DAS.Testing.AutoFixture;
 
 namespace SFA.DAS.CourseTypes.Application.UnitTests.Queries.GetLearnerAge;
 

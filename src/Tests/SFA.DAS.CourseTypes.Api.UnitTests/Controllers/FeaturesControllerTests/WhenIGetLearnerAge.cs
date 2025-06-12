@@ -1,13 +1,13 @@
 using System.Net;
 using AutoFixture.NUnit3;
 using FluentAssertions;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using NUnit.Framework;
 using SFA.DAS.CourseTypes.Api.ApiResponses;
-using SFA.DAS.CourseTypes.Application.Application.Queries.GetLearnerAge;
-using MediatR;
 using SFA.DAS.CourseTypes.Api.Controllers;
+using SFA.DAS.CourseTypes.Application.Application.Queries.GetLearnerAge;
 using SFA.DAS.Testing.AutoFixture;
 
 namespace SFA.DAS.CourseTypes.Api.UnitTests.Controllers.FeaturesControllerTests;
