@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <AssemblyName>SFA.DAS.CourseTypes.Application</AssemblyName>
+        <RootNamespace>SFA.DAS.CourseTypes.Application</RootNamespace>
+    </PropertyGroup>
+    <ItemGroup>
+      <PackageReference Include="MediatR" Version="12.3.0" />
+      <PackageReference Include="Microsoft.AspNetCore.JsonPatch" Version="8.0.10" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\SFA.DAS.CourseTypes.Domain\SFA.DAS.CourseTypes.Domain.csproj" />
+    </ItemGroup>
+
+</Project>
