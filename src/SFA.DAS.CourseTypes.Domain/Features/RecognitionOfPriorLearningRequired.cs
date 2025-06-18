@@ -1,12 +1,7 @@
 ﻿namespace SFA.DAS.CourseTypes.Domain.Features;
 
-public class RecognitionOfPriorLearningRequired : RecognitionOfPriorLearning
+public class RecognitionOfPriorLearningRequired(int offTheJobTrainingMinimumHours) : RecognitionOfPriorLearning
 {
     public override bool IsRequired => true;
-    public override int? OffTheJobTrainingMinimumHours { get; }
-
-    public RecognitionOfPriorLearningRequired(int offTheJobTrainingMinimumHours)
-    {
-        OffTheJobTrainingMinimumHours = offTheJobTrainingMinimumHours;
-    }
+    public override int? OffTheJobTrainingMinimumHours { get; } = offTheJobTrainingMinimumHours;
 }
